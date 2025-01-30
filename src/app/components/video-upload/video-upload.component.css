@@ -1,0 +1,36 @@
+.video-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .file-input-label {
+    cursor: pointer; /* Change cursor to pointer */
+  }
+  
+  .file-input-icon {
+    width: 100px; /* Set width for the icon */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  input[type="file"] {
+    display: none; /* Hide the default file input */
+  }
+  
+  .upload-button {
+    margin-top: 10px; /* Space between the icon and button */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .upload-button:disabled {
+    background-color: #ccc; /* Disabled button color */
+    cursor: not-allowed;
+  }
+  
