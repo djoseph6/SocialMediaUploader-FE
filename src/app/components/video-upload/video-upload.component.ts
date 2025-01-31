@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { VideoUploadService } from '../../services/video-upload.service';
 import { CommonModule } from '@angular/common';
-//import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-video-upload',
   standalone: true,
   imports: [CommonModule],
+  providers: [VideoUploadService],
   templateUrl: './video-upload.component.html',
   styleUrl: './video-upload.component.css'
 })
@@ -37,6 +39,25 @@ export class VideoUploadComponent {
     return this.acceptedFormats.includes(fileExtension!);
   }
 
+  // uploadVideo() {
+  //   if (!this.selectedFile) {
+  //     alert('Please select a video file.');
+  //     return;
+  //   }
+
+  //   // Call the service to upload the video if the button is enabled
+  //   this.videoUploadService.uploadVideo(this.selectedFile).subscribe(
+  //     function(response) {
+  //       console.log('Upload successful:', response);
+  //       alert('Video uploaded successfully!');
+  //       this.resetForm(); // Reset the form after successful upload
+  //     }.bind(this), // Bind 'this' to the function
+  //     function(error) {
+  //       console.error('Upload failed:', error);
+  //       alert('Failed to upload video.');
+  //     }
+  //   );
+  // }
   uploadVideo() {
     if (!this.selectedFile) {
       alert('Please select a video file.');

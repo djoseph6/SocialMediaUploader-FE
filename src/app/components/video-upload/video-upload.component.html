@@ -1,9 +1,26 @@
 <div class="video-upload-container">
+  <!-- Label acting as the custom file input button -->
   <label for="fileInput" class="file-input-label">
+    <div>Select Video</div>
     <img src="assets/select-file-icon.png" alt="Select File" class="file-input-icon" />
+    
   </label>
-  <input type="file" id="fileInput" (change)="onFileSelected($event)" accept=".mp4, .avi, .mov, .wmv, .mkv" />
   
+  <!-- Hidden file input -->
+  <input 
+    type="file" 
+    id="fileInput" 
+    (change)="onFileSelected($event)" 
+    accept=".mp4, .avi, .mov, .wmv, .mkv" 
+    style="display: none;"  
+  />
+
+  <!-- Display selected file name -->
+  <div *ngIf="selectedFile">
+    <p>Selected File: {{ selectedFile.name }}</p>
+  </div>
+  
+  <!-- Upload button -->
   <button (click)="uploadVideo()" [disabled]="!uploadButtonEnabled" class="upload-button">
     Upload Video
   </button>
